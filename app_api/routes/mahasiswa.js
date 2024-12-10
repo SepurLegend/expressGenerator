@@ -9,23 +9,23 @@ const roleMiddleware = require("../middleware/roleMiddleware");
 
 // Route untuk mendapatkan semua data mahasiswa
 router.get("/", 
-  authMiddleware,
-  roleMiddleware("admin"),
+  // authMiddleware,
+  // roleMiddleware("admin"),
   mahasiswaController.getAllMahasiswa);
 // Mengarahkan ke fungsi getAllMahasiswa di controller untuk mengambil semua data mahasiswa
 
 // Route untuk mendapatkan data mahasiswa berdasarkan ID
 router.get("/:id", 
-  authMiddleware,
-  roleMiddleware("admin"),
+  // authMiddleware,
+  // roleMiddleware("admin"),
   mahasiswaController.getMahasiswaById);
 // Mengarahkan ke fungsi getMahasiswaById di controller untuk mengambil data mahasiswa berdasarkan ID
 
 // Route untuk menambahkan data mahasiswa baru, termasuk upload file foto
 router.post(
   "/",
-  authMiddleware,
-  roleMiddleware("admin"),
+  // authMiddleware,
+  // roleMiddleware("admin"),
   upload.single("foto"),
   mahasiswaController.createMahasiswa
 );
@@ -34,8 +34,8 @@ router.post(
 // Route untuk memperbarui data mahasiswa, dengan upload foto opsional
 router.put(
   "/:id",
-  authMiddleware,
-  roleMiddleware("admin"),
+  // authMiddleware,
+  // roleMiddleware("admin"),
   upload.single("foto"),
   mahasiswaController.updateMahasiswa
 );
@@ -44,8 +44,8 @@ router.put(
 // Route untuk menghapus data mahasiswa berdasarkan ID
 router.delete(
   "/:id",
-  authMiddleware,
-  roleMiddleware("admin"),
+  // authMiddleware,
+  // roleMiddleware("admin"),
   mahasiswaController.deleteMahasiswa
 );
 // Mengarahkan ke fungsi deleteMahasiswa di controller untuk menghapus data mahasiswa berdasarkan ID
