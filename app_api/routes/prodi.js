@@ -17,8 +17,8 @@ router.get("/",
     prodiController.getAllProdi);
 // Mengatur rute POST untuk membuat data prodi baru
 router.post("/", 
-    // authMiddleware,
-    // roleMiddleware("admin"),
+    authMiddleware,
+    roleMiddleware("admin"),
     prodiController.createProdi);
 // Mengatur rute GET untuk mendapatkan data prodi berdasarkan ID
 router.get("/:id", 
@@ -27,13 +27,13 @@ router.get("/:id",
     prodiController.getProdiById);
 // Mengatur rute PUT untuk memperbarui data prodi berdasarkan ID
 router.put("/:id", 
-    // authMiddleware,
-    // roleMiddleware("admin"),
+    authMiddleware,
+    roleMiddleware("admin"),
     prodiController.updateProdi);
 // Mengatur rute DELETE untuk menghapus data prodi berdasarkan ID
 router.delete("/:id", 
-    // authMiddleware,
-    // roleMiddleware("admin"),
+    authMiddleware,
+    roleMiddleware("admin"),
     prodiController.deleteProdi);
 
 // Mengeksport router agar dapat digunakan di file lain (misalnya, di app.js)
